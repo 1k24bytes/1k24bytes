@@ -5,7 +5,7 @@
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=1k24bytes&label=Profile%20views&color=0e75b6&style=flat" alt="1k24bytes" /> </p>
 
 <p align="left"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=1k24bytes" alt="1k24bytes" /></a> </p>
-<img align="right" alt"Error 404" width="380px" src="https://img.freepik.com/free-vector/web-development-programmer-engineering-coding-website-augmented-reality-interface-screens-developer-project-engineer-programming-software-application-design-cartoon-illustration_107791-3863.jpg">
+<img align="right" alt"Error 404" width="380px" src="https://i.ibb.co/LPyYK8V/68747470733a2f2f696d672e6672656570696b2e636f6d2f667265652d766563746f722f7765622d646576656c6f706d656e.png">
 
 
 - 🔭 I’m currently working on **Kitaab Waan**
