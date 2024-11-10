@@ -8,11 +8,9 @@
 <img align="right" alt"Error 404" width="380px" src="https://i.ibb.co/LPyYK8V/68747470733a2f2f696d672e6672656570696b2e636f6d2f667265652d766563746f722f7765622d646576656c6f706d656e.png">
 
 
-- 🔭 I’m currently working on **Kitaab Waan**
+- 🔭 I’m currently working on **Better Youtube** extension.
 
 - 🌱 I’m currently learning **React, Typescript**
-
-- 👯 I’m looking to collaborate on **Bibi Epub Reader**
 
 - 💬 Ask me about **HTML, CSS, JS, Tailwind, Bootstrap**
 
