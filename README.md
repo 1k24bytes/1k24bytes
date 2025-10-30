@@ -8,13 +8,7 @@
 <img align="right" alt"Error 404" width="380px" src="https://i.ibb.co/LPyYK8V/68747470733a2f2f696d672e6672656570696b2e636f6d2f667265652d766563746f722f7765622d646576656c6f706d656e.png">
 
 
-- 🔭 I’m currently working on **Better Youtube** extension.
 
-- 🌱 I’m currently learning **React, Typescript**
-
-- 💬 Ask me about **HTML, CSS, JS, Tailwind, Bootstrap**
-
-- ⚡ Fun fact **The first computer programmer was a woman named Ada Lovelace who wrote the first algorithm in the mid-1800s, nearly a century before the first computer was built! She's considered to be the world's first computer programmer because of her work with Charles Babbage's Analytical Engine.**
 
 <h3 align="left">Connect with me:</h3>
 <p align="left">
