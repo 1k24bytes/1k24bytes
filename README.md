@@ -34,6 +34,6 @@ Building on the web, working with AI
 
 ## Connect
 
-Email — [work@cursorcanvas.site](mailto:work@cursorcanvas.site)
-Instagram — [@cursor__canvas](https://instagram.com/cursor__canvas)
+Email — [tawqeerdar21@gmail.com](mailto:tawqeerdar21@gmail.com)
+Instagram — [@tawqee___er](https://instagram.com/tawqee___er)
 Discord — [Join server](https://discord.gg/liizwiiz)
