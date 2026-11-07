@@ -1,10 +1,10 @@
 <div align="center">
 
-<img src="assets/ascii-banner.svg" alt="Tawqeer — building on the web, working with AI" width="760">
+<img src="ascii-banner.svg" alt="Tawqeer — building on the web, working with AI" width="760">
 
 <br><br>
 
-<img src="assets/terminal.svg" alt="Terminal: web dev x AI builder, currently learning Framer Motion" width="720">
+<img src="terminal.svg" alt="Terminal: web dev x AI builder, currently learning Framer Motion" width="720">
 
 </div>
 
@@ -46,11 +46,11 @@
 <br>
 
 <!--
-Optional: GitHub stats. Replace YOUR_USERNAME, then remove this comment wrapper.
+Optional: GitHub stats. Remove this comment wrapper to enable.
 
 <div align="center">
-<img height="170" src="https://github-readme-stats.vercel.app/api?username=YOUR_USERNAME&show_icons=true&theme=github_dark&hide_border=true&bg_color=0d1117" alt="GitHub stats" />
-<img height="170" src="https://github-readme-stats.vercel.app/api/top-langs/?username=YOUR_USERNAME&layout=compact&theme=github_dark&hide_border=true&bg_color=0d1117" alt="Top languages" />
+<img height="170" src="https://github-readme-stats.vercel.app/api?username=1k24bytes&show_icons=true&theme=github_dark&hide_border=true&bg_color=0d1117" alt="GitHub stats" />
+<img height="170" src="https://github-readme-stats.vercel.app/api/top-langs/?username=1k24bytes&layout=compact&theme=github_dark&hide_border=true&bg_color=0d1117" alt="Top languages" />
 </div>
 -->
 
