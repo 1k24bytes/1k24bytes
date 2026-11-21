@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="380" height="230" viewBox="0 0 380 230" role="img" aria-label="BUILD — Products &amp; systems"><title>BUILD — Products &amp; systems</title><style>
+      
+      text { fill: #161616; }
+      .serif { font-family: 'Instrument Serif', Georgia, 'Times New Roman', serif; }
+      .sans { font-family: 'Geist', Arial, sans-serif; }
+      .mono { font-family: 'Geist', 'Courier New', monospace; }
+      .muted { fill: #6f6f6f; }
+      .rule { stroke: #e6e6e6; stroke-width: 1; }
+      
+    @keyframes rise { 0% { opacity:0; transform:translateY(18px); } 100% { opacity:1; transform:translateY(0); } }
+    @keyframes print { 0% { opacity:0; } 100% { opacity:1; } }
+    @keyframes grow { 0% { transform:scaleY(.02); opacity:.5; } 100% { transform:scaleY(1); opacity:1; } }
+    @keyframes tile-in { 0% { opacity:0; transform:translateY(25px) rotate(1.8deg); } 70% { opacity:1; transform:translateY(-3px) rotate(-.3deg); } 100% { opacity:1; transform:translateY(0) rotate(0); } }
+    @keyframes pulse { 0%,100% { opacity:.18; } 50% { opacity:.7; } }
+    @keyframes nudge { 0%,100% { transform:translateX(0); } 50% { transform:translateX(7px); } }
+    .anim { animation:rise .75s cubic-bezier(.2,.75,.25,1) both; }
+    .print-row { opacity:0; animation:print .2s linear forwards; }
+    .bar { transform-box:fill-box; transform-origin:bottom; animation:grow .85s cubic-bezier(.2,.7,.2,1) both; }
+    .tile-enter { animation:tile-in .8s cubic-bezier(.2,.8,.2,1) both; }
+    .pulse { animation:pulse 2.6s ease-in-out infinite; }
+    .arrow { animation:nudge 2.2s ease-in-out infinite; }
+    
+      
+    @media (prefers-reduced-motion: reduce) {
+      .anim, .print-row, .bar, .tile-enter, .smil-motion, .arrow, .pulse { animation: none !important; }
+      .anim, .print-row, .bar, .tile-enter { opacity: 1 !important; transform: none !important; }
+      .smil-motion { display: none !important; }
+    }
+    
+    </style><rect width="380" height="230" rx="18" fill="#2447f5"/><g class="tile-enter" style="animation-delay:0.45s"><text x="28" y="46" class="sans" font-size="12" letter-spacing="2" style="fill:#ffffff">01 / SHIP</text><text x="352" y="48" text-anchor="end" class="serif arrow" font-size="26" style="fill:#ffffff">→</text><text x="26" y="140" class="serif" font-size="54" style="fill:#ffffff">BUILD</text><text x="28" y="178" class="sans" font-size="16" style="fill:#ffffff">Products &amp; systems</text></g><rect x="-120" y="0" width="72" height="230" fill="#ffffff" opacity=".11" transform="skewX(-22)" class="smil-motion"><animate attributeName="x" from="-120" to="450" dur="5.5s" repeatCount="indefinite"/></rect></svg>

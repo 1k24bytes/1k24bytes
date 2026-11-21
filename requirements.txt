@@ -1,0 +1,3 @@
+requests>=2.31,<3
+fonttools[woff]>=4.50,<5
+brotli>=1.1,<2
