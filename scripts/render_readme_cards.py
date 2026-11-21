@@ -26,7 +26,7 @@ BLUE = "#2447f5"
 RED = "#e1332d"
 YELLOW = "#ffc61a"
 RULE = "#e6e6e6"
-GRID = ["#e9ecfa", "#c6cdfb", "#939ef8", "#5564f2", "#2447f5"]
+GRID = ["#e9ecfa", "#c3cdff", "#93a6ff", "#5f7dff", "#2447f5", "#1633c9"]
 BAR = "#161616"
 BAR_EMPTY = "#e7e7e7"
 
@@ -196,14 +196,15 @@ def render_hero() -> None:
 def contribution_color(count: int, maximum: int) -> str:
     if count <= 0:
         return GRID[0]
-    ratio = count / max(1, maximum)
-    if ratio <= .25:
+    if count <= 5:
         return GRID[1]
-    if ratio <= .5:
+    if count <= 15:
         return GRID[2]
-    if ratio <= .75:
+    if count <= 30:
         return GRID[3]
-    return GRID[4]
+    if count <= 50:
+        return GRID[4]
+    return GRID[5]
 
 
 def render_contributions(data: dict) -> None:
@@ -221,8 +222,8 @@ def render_contributions(data: dict) -> None:
         end = date.today()
         start = date.fromordinal(end.toordinal() - 364)
     grid_start = date.fromordinal(start.toordinal() - start.weekday())
-    cell, gap = 14, 5
-    grid_x, grid_y = 40, 106
+    cell, gap = 15, 5
+    grid_x, grid_y = 60, 106
     max_count = max(counts.values(), default=1)
     month_labels: list[tuple[int, str]] = []
     current_month = None
@@ -242,18 +243,18 @@ def render_contributions(data: dict) -> None:
             idx = col * 7 + row
             style = "" if STATIC else f' style="animation-delay:{min(idx * .006, 2.8):.3f}s"'
             cls = "" if STATIC else "anim"
-            svg += f'<rect x="{grid_x + col*(cell+gap)}" y="{grid_y + row*(cell+gap)}" width="{cell}" height="{cell}" rx="2" fill="{color}" class="{cls}"{style}><title>{day.isoformat()}: {count} contributions</title></rect>'
+            svg += f'<rect x="{grid_x + col*(cell+gap)}" y="{grid_y + row*(cell+gap)}" width="{cell}" height="{cell}" rx="3" fill="{color}" class="{cls}"{style}><title>{day.isoformat()}: {count} contributions</title></rect>'
     for col, label in month_labels:
         if col < 53:
-            svg += f'<text x="{grid_x + col*(cell+gap)}" y="{grid_y - 10}" class="sans muted" font-size="12">{label}</text>'
+            svg += f'<text x="{grid_x + col*(cell+gap)}" y="{grid_y - 10}" class="mono muted" font-size="12">{label}</text>'
     legend_y = H - 28
     sw_x = W - 40 - 44 - len(GRID) * 17
-    svg += f'<text x="{sw_x - 8}" y="{legend_y}" text-anchor="end" class="sans muted" font-size="12">less</text>'
+    svg += f'<text x="{sw_x - 8}" y="{legend_y}" text-anchor="end" class="mono muted" font-size="11">less</text>'
     for i, color in enumerate(GRID):
-        svg += f'<rect x="{sw_x + i*17}" y="{legend_y - 11}" width="14" height="12" rx="2" fill="{color}"/>'
-    svg += f'<text x="{W - 40}" y="{legend_y}" text-anchor="end" class="sans muted" font-size="12">more</text>'
+        svg += f'<rect x="{sw_x + i*17}" y="{legend_y - 11}" width="14" height="12" rx="2.5" fill="{color}"/>'
+    svg += f'<text x="{W - 40}" y="{legend_y}" text-anchor="end" class="mono muted" font-size="11">more</text>'
     if not days:
-        svg += f'<text x="{W / 2:.0f}" y="{legend_y}" class="sans muted" font-size="12" text-anchor="middle">Daily detail appears after the first GitHub Actions refresh.</text>'
+        svg += f'<text x="{W / 2:.0f}" y="{legend_y}" class="mono muted" font-size="12" text-anchor="middle">Daily detail appears after the first GitHub Actions refresh.</text>'
     svg = svg_end(svg)
     write_svg("contributions.svg", svg)
 
