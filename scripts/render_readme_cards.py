@@ -222,31 +222,47 @@ def render_contributions(data: dict) -> None:
         end = date.today()
         start = date.fromordinal(end.toordinal() - 364)
     grid_start = date.fromordinal(start.toordinal() - start.weekday())
-    cell, gap = 15, 5
     grid_x, grid_y = 60, 106
+    gap = 5
     max_count = max(counts.values(), default=1)
-    month_labels: list[tuple[int, str]] = []
-    current_month = None
+    rendered: list[tuple[int, int, str, int]] = []
     for col in range(54):
-        week_date = date.fromordinal(grid_start.toordinal() + col * 7)
-        label = week_date.strftime("%b")
-        key = (week_date.year, week_date.month)
-        if key != current_month and week_date <= end and week_date >= start - __import__('datetime').timedelta(days=7):
-            month_labels.append((col, label))
-            current_month = key
         for row in range(7):
             day = date.fromordinal(grid_start.toordinal() + col * 7 + row)
             if day < start or day > end:
                 continue
-            count = counts.get(day.isoformat(), 0)
+            key = day.isoformat()
+            if key not in counts:
+                continue
+            rendered.append((col, row, key, counts[key]))
+    if rendered:
+        cols_used = sorted({c for c, _, _, _ in rendered})
+        pos = {c: i for i, c in enumerate(cols_used)}
+        step = ((W - 40) - grid_x) / len(cols_used)
+        cell = step - gap
+        for col, row, key, count in rendered:
             color = contribution_color(count, max_count)
             idx = col * 7 + row
             style = "" if STATIC else f' style="animation-delay:{min(idx * .006, 2.8):.3f}s"'
             cls = "" if STATIC else "anim"
-            svg += f'<rect x="{grid_x + col*(cell+gap)}" y="{grid_y + row*(cell+gap)}" width="{cell}" height="{cell}" rx="3" fill="{color}" class="{cls}"{style}><title>{day.isoformat()}: {count} contributions</title></rect>'
-    for col, label in month_labels:
-        if col < 53:
-            svg += f'<text x="{grid_x + col*(cell+gap)}" y="{grid_y - 10}" class="mono muted" font-size="12">{label}</text>'
+            x = grid_x + pos[col] * step
+            y = grid_y + row * step
+            svg += f'<rect x="{x:.1f}" y="{y:.1f}" width="{cell:.1f}" height="{cell:.1f}" rx="3" fill="{color}" class="{cls}"{style}><title>{key}: {count} contributions</title></rect>'
+        placed: list[float] = []
+        seen_months: set[tuple[int, int]] = set()
+        for col, _row, key, _count in rendered:
+            dt = date.fromisoformat(key)
+            ym = (dt.year, dt.month)
+            if ym in seen_months:
+                continue
+            seen_months.add(ym)
+            x = grid_x + pos[col] * step
+            if all(abs(x - px) > 50 for px in placed):
+                placed.append(x)
+                if x > W - 76:
+                    svg += f'<text x="{W - 40}" y="{grid_y - 10}" text-anchor="end" class="mono muted" font-size="12">{dt.strftime("%b")}</text>'
+                else:
+                    svg += f'<text x="{x:.1f}" y="{grid_y - 10}" class="mono muted" font-size="12">{dt.strftime("%b")}</text>'
     legend_y = H - 28
     sw_x = W - 40 - 44 - len(GRID) * 17
     svg += f'<text x="{sw_x - 8}" y="{legend_y}" text-anchor="end" class="mono muted" font-size="11">less</text>'
