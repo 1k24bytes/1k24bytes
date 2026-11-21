@@ -181,7 +181,7 @@ def render_hero() -> None:
     svg = card_start(1200, 430, "Tawqeer Amin Dar — Full Stack Developer")
     svg += '<g class="anim" style="animation-delay:.08s">'
     svg += f'<rect x="48" y="48" width="9" height="9" fill="{BLUE}"/>'
-    svg += '<text x="66" y="56" class="sans muted" font-size="13" letter-spacing="2.5">FULL STACK DEVELOPER IN INDIA</text>'
+    svg += '<text x="66" y="56" class="sans muted" font-size="13" letter-spacing="2.5">FULL STACK DEVELOPER</text>'
     svg += '<text x="44" y="198" class="serif" font-size="118" font-style="italic">Tawqeer</text>'
     svg += '<text x="44" y="308" class="serif" font-size="118" font-style="italic">Amin Dar</text>'
     svg += '<text x="48" y="354" class="sans" font-size="20">Building useful web, mobile and operational products.</text>'
@@ -326,7 +326,7 @@ def render_tile(filename: str, title: str, subtitle: str, color: str, text_color
     svg += f'<g class="{cls}"{delay}>'
     svg += f'<text x="28" y="46" class="sans" font-size="12" letter-spacing="2" style="fill:{text_color}">{esc(eyebrow)}</text>'
     svg += f'<text x="{W - 28}" y="48" text-anchor="end" class="serif arrow" font-size="26" style="fill:{text_color}">→</text>'
-    svg += f'<text x="26" y="140" class="serif" font-size="54" style="fill:{text_color}">{esc(title)}</text>'
+    svg += f'<text x="26" y="140" class="serif" font-size="52" style="fill:{text_color}">{esc(title)}</text>'
     svg += f'<text x="28" y="178" class="sans" font-size="16" style="fill:{text_color}">{esc(subtitle)}</text></g>'
     # A fine moving highlight is intentionally native SVG SMIL, not JavaScript.
     if not STATIC:
@@ -343,9 +343,9 @@ def main() -> int:
     render_hero()
     render_contributions(data)
     render_activity(data)
-    render_tile("build.svg", "BUILD", "Products & systems", BLUE, "#ffffff", "01 / SHIP", 0)
-    render_tile("brand.svg", "BRAND", "Interfaces & design", RED, "#ffffff", "02 / CREATE", 1)
-    render_tile("learn.svg", "LEARN", "Experiments & notes", YELLOW, INK, "03 / EXPLORE", 2)
+    render_tile("build.svg", "10+ clients", "Products & systems", BLUE, "#ffffff", "01 / SHIP", 0)
+    render_tile("brand.svg", "100K users", "Interfaces & design", RED, "#ffffff", "02 / CREATE", 1)
+    render_tile("learn.svg", "3+ countries", "Experiments & notes", YELLOW, INK, "03 / EXPLORE", 2)
     print(f"Rendered 6 SVG cards into {CARDS} (STATIC={int(STATIC)})")
     return 0
 
